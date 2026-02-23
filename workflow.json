@@ -1,0 +1,60 @@
+{
+  "workflow": {
+    "nodes": [
+      {
+        "id": "input_node",
+        "type": "Input",
+        "label": "User Query / Schedule Trigger",
+        "nodeCategory": "input"
+      },
+      {
+        "id": "legal_assistant_agent",
+        "type": "Agent",
+        "label": "Legal Knowledge Assistant Agent",
+        "nodeCategory": "agent",
+        "agent_id": "699be53fabc429f336b46816",
+        "config": {
+          "name": "Legal Knowledge Assistant Agent",
+          "provider": "openai",
+          "model": "gpt-4.1",
+          "temperature": 0.3,
+          "top_p": 1,
+          "has_knowledge_base": true,
+          "rag_id": "699be518e12ce16820316e45",
+          "rag_name": "dpdpaitactlegalkbg1eb"
+        }
+      },
+      {
+        "id": "meity_monitor_agent",
+        "type": "Agent",
+        "label": "MeitY Update Monitor Agent",
+        "nodeCategory": "agent",
+        "agent_id": "699be53f0ed57996e7d19026",
+        "config": {
+          "name": "MeitY Update Monitor Agent",
+          "provider": "perplexity",
+          "model": "sonar-pro",
+          "temperature": 0.2,
+          "top_p": 1,
+          "has_knowledge_base": true,
+          "rag_id": "699be5183dc9e9e5282863a1",
+          "rag_name": "meityupdateskbg7ge",
+          "has_schedule": true,
+          "schedule_id": "699be546399dfadeac3879a6",
+          "cron_expression": "0 9 * * *",
+          "timezone": "Asia/Kolkata"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "source": "input_node",
+        "target": "legal_assistant_agent"
+      },
+      {
+        "source": "input_node",
+        "target": "meity_monitor_agent"
+      }
+    ]
+  }
+}

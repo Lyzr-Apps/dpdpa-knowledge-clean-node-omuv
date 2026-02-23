@@ -1,0 +1,73 @@
+{
+  "agent_name": "MeitY Update Monitor Agent",
+  "agent_id": "699be53f0ed57996e7d19026",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "has_knowledge_base": true,
+  "rag_id": "699be5183dc9e9e5282863a1",
+  "schema": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "MeitYUpdateResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "updates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "description": "Title of the regulatory update"
+                },
+                "date": {
+                  "type": "string",
+                  "description": "Date of the update"
+                },
+                "summary": {
+                  "type": "string",
+                  "description": "Concise summary of the change"
+                },
+                "affected_provisions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "List of provisions affected by this update"
+                },
+                "impact_level": {
+                  "type": "string",
+                  "description": "Impact level: Critical, High, Medium, or Low"
+                },
+                "framework": {
+                  "type": "string",
+                  "description": "Which framework this update belongs to (DPDPA, IT Act 2000, IT Act 2008, MeitY Policy)"
+                },
+                "source_url": {
+                  "type": "string",
+                  "description": "Link to the original document if available"
+                }
+              },
+              "required": ["title", "date", "summary", "affected_provisions", "impact_level", "framework", "source_url"],
+              "additionalProperties": false
+            },
+            "description": "List of regulatory updates found"
+          },
+          "summary": {
+            "type": "string",
+            "description": "Overall summary of the regulatory landscape"
+          },
+          "last_checked": {
+            "type": "string",
+            "description": "Timestamp of when this check was performed"
+          }
+        },
+        "required": ["updates", "summary", "last_checked"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

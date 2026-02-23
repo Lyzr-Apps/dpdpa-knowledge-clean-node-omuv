@@ -1,0 +1,65 @@
+{
+  "agent_name": "Legal Knowledge Assistant Agent",
+  "agent_id": "699be53fabc429f336b46816",
+  "agent_type": "json",
+  "accessor": "json",
+  "has_module_outputs": false,
+  "has_knowledge_base": true,
+  "rag_id": "699be518e12ce16820316e45",
+  "schema": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "LegalKnowledgeResponse",
+      "strict": true,
+      "schema": {
+        "type": "object",
+        "properties": {
+          "answer": {
+            "type": "string",
+            "description": "The main legal answer with provisions and analysis"
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "act": {
+                  "type": "string",
+                  "description": "Name of the act (DPDPA, IT Act 2000, IT Act 2008)"
+                },
+                "section": {
+                  "type": "string",
+                  "description": "Section or clause number"
+                },
+                "description": {
+                  "type": "string",
+                  "description": "Brief description of the relevant provision"
+                }
+              },
+              "required": ["act", "section", "description"],
+              "additionalProperties": false
+            },
+            "description": "Source citations from legal documents"
+          },
+          "cross_framework_analysis": {
+            "type": "string",
+            "description": "Analysis of how different frameworks interact for this query"
+          },
+          "precedence_notes": {
+            "type": "string",
+            "description": "Notes on which framework takes precedence if there are conflicts"
+          },
+          "compliance_steps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Specific compliance steps or obligations if applicable"
+          }
+        },
+        "required": ["answer", "sources", "cross_framework_analysis", "precedence_notes", "compliance_steps"],
+        "additionalProperties": false
+      }
+    }
+  }
+}

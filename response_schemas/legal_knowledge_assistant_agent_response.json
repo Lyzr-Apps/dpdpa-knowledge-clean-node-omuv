@@ -1,0 +1,38 @@
+{
+  "agent_name": "Legal Knowledge Assistant Agent",
+  "agent_id": "699be53fabc429f336b46816",
+  "description": "Answers user queries by searching across DPDPA, IT Act 2000, IT Act 2008, and MeitY website knowledge bases. Provides compliance guidance, cross-framework precedence analysis, and source-cited responses.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "answer": "string",
+    "sources": [
+      {
+        "act": "string",
+        "section": "string",
+        "description": "string"
+      }
+    ],
+    "cross_framework_analysis": "string",
+    "precedence_notes": "string",
+    "compliance_steps": [
+      "string"
+    ]
+  },
+  "example_response": {
+    "answer": "The main legal answer with provisions and analysis",
+    "sources": [
+      {
+        "act": "Name of the act (DPDPA, IT Act 2000, IT Act 2008)",
+        "section": "Section or clause number",
+        "description": "Brief description of the relevant provision"
+      }
+    ],
+    "cross_framework_analysis": "Analysis of how different frameworks interact for this query",
+    "precedence_notes": "Notes on which framework takes precedence if there are conflicts",
+    "compliance_steps": [
+      "sample string"
+    ]
+  }
+}

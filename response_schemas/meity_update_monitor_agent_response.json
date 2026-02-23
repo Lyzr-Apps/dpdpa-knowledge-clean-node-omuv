@@ -1,0 +1,42 @@
+{
+  "agent_name": "MeitY Update Monitor Agent",
+  "agent_id": "699be53f0ed57996e7d19026",
+  "description": "Monitors the MeitY website for new amendments, draft rules, final rules, and policy updates. Generates concise change summaries, identifies affected provisions, and notifies users of regulatory changes.",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "updates": [
+      {
+        "title": "string",
+        "date": "string",
+        "summary": "string",
+        "affected_provisions": [
+          "string"
+        ],
+        "impact_level": "string",
+        "framework": "string",
+        "source_url": "string"
+      }
+    ],
+    "summary": "string",
+    "last_checked": "string"
+  },
+  "example_response": {
+    "updates": [
+      {
+        "title": "Title of the regulatory update",
+        "date": "Date of the update",
+        "summary": "Concise summary of the change",
+        "affected_provisions": [
+          "sample string"
+        ],
+        "impact_level": "Impact level: Critical, High, Medium, or Low",
+        "framework": "Which framework this update belongs to (DPDPA, IT Act 2000, IT Act 2008, MeitY Policy)",
+        "source_url": "Link to the original document if available"
+      }
+    ],
+    "summary": "Overall summary of the regulatory landscape",
+    "last_checked": "Timestamp of when this check was performed"
+  }
+}

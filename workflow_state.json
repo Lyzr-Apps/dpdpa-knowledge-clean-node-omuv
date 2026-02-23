@@ -1,0 +1,25 @@
+{
+  "agents": {
+    "legal_knowledge_assistant": {
+      "agent_id": "699be53fabc429f336b46816",
+      "name": "Legal Knowledge Assistant Agent",
+      "rag_id": "699be518e12ce16820316e45",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "has_knowledge_base": true,
+      "has_schedule": false
+    },
+    "meity_update_monitor": {
+      "agent_id": "699be53f0ed57996e7d19026",
+      "name": "MeitY Update Monitor Agent",
+      "rag_id": "699be5183dc9e9e5282863a1",
+      "provider": "perplexity",
+      "model": "sonar-pro",
+      "has_knowledge_base": true,
+      "has_schedule": true,
+      "schedule_id": "699be546399dfadeac3879a6",
+      "cron_expression": "0 9 * * *",
+      "timezone": "Asia/Kolkata"
+    }
+  }
+}
