@@ -1,16 +1,16 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Noto_Sans } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 import { IframeLoggerInit } from '@/components/IframeLoggerInit'
 import ErrorBoundary from '@/components/ErrorBoundary'
 import { AgentInterceptorProvider } from '@/components/AgentInterceptorProvider'
 
-const inter = Inter({ subsets: ['latin'] })
+const notoSans = Noto_Sans({ subsets: ['latin'], weight: ['400', '500', '600', '700'] })
 
 export const metadata: Metadata = {
-  title: 'Next.js App',
-  description: 'Built with Next.js, React, and Tailwind CSS',
+  title: 'DPDPA & IT Act Legal Knowledge Base',
+  description: 'Legal knowledge base for DPDPA, IT Act 2000, and IT Act 2008 compliance',
   icons: {
     icon: '/lyzr.png',
   },
@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={notoSans.className} suppressHydrationWarning>
         <IframeLoggerInit />
         <ErrorBoundary>
           <AgentInterceptorProvider>
